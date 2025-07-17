@@ -16,13 +16,15 @@ let
   dh = parse(Int,ARGS[5])
   NS = parse(Int,ARGS[6])
   NR = parse(Int,ARGS[7])
-  model = ARGS[8]
+  ang = parse(Int,ARGS[8])
+  model = ARGS[9]
   NC = 0.2
   sites = siteinds("S=1/2", N*W)
   # Initialize a random MPS
   psi0 = random_mps(sites)
   Nh=Int((hf-h)/dh)
-  ang=0
+  Nang=10.0
+  
   var=.0
   folder="RESULTS"*"/"*"RUN_QIM_DMRG_L" * ARGS[1] * "W" * ARGS[2]* "NS" * ARGS[5] * "G" * ARGS[3] * "GF" * ARGS[4] * "NR" * ARGS[6] * "ANG" * "$ang"
 
@@ -44,7 +46,7 @@ let
       En=zeros(NR)
       
       println("L=$N","W=$W","G=$h_model","NS=$NS ",model)
-      os=rotated_over_y_quantum_heisenberg(N,h_model,ang*pi)
+      os=rotated_over_y_quantum_heisenberg(N,h_model,float(ang*pi)/Nang)
       H = MPO(os, sites)
       
       
