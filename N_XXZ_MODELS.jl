@@ -41,7 +41,7 @@ let
    
   for iter in 0:Nh
 
-      h_model=h+iter*dh
+      h_model=-1.0*(h+iter*dh)
 
       En=zeros(NR)
       
