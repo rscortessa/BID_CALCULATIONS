@@ -59,7 +59,7 @@ let
 
 	  nsweeps = 30
       	  maxdim = [64,64,64,128,256,256,256,400,400,512,1024,1024,1024,1024,1024]
-      	  cutoff = 1E-11
+      	  cutoff = 1E-10
 	  energy, psi = DRIVER(filename_opt,H,psi0,N,nsweeps,cutoff)
 
 	  # Update the wavefunction
