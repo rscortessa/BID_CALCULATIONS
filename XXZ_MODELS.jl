@@ -57,7 +57,7 @@ let
 	  
 	  # Run DMRG to find the ground state
 
-	  nsweeps = 30
+	  nsweeps = 10
       	  maxdim = [64,64,64,128,256,256,256,400,400,512,1024,1024,1024,1024,1024]
       	  cutoff = 1E-10
 	  energy, psi = DRIVER(filename_opt,H,psi0,N,nsweeps,cutoff)
